@@ -9,25 +9,68 @@ Go through all of the following questions and think about how you would respond 
 ## General Questions
 
 * What did you learn yesterday/this week?
+  - Yesterday I learned how to create custom filters and directives for Angular
+  - This week I learned how to make a MEAN stack application
+
 * What excites or interests you about coding?
+  - Looking at and using my finished products are what excites me about coding.
+  - One of the reasons I am interested in coding is because I can create products that people can use to learn and potentially help advance health technologies
+
 * What is a recent technical challenge you experienced and how did you solve it?
+  - A recent technical challenge I faced was creating a MEAN stack application for a day long hackathon.
+  - I was working in a group with 3 other people and we tackeled this problem by first creating the models and controllers, then we data scraped a website, set up login/ signup functionality, created the front end, and finally set up a page to display the scraped data.
+
 * What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
+  - If I am creating a web app or site that requires a user to login I make sure to include restricted access to certain pages/ information and bcrypt to protect user passwords.
+  - I also try to make my apps as easy to use as possible, if I feel a user will question someting I try to alter my front end code so that the functionality in question is self explanitory.
+  - I try to keep my app as maintainable as possible by naming functions, id's, etc. by their use and what they do.
+  - When taking SEO into consideration I try to name my routes as relevent to what the app is used for as possible.
+
 * Talk about your preferred development environment.
+  - I prefer to work in a quite, relaxed environment, that promotes learning and doesn't make you feel awkward for asking questions.
+
 * Which version control systems are you familiar with?
+  - Git
+
 * Can you describe your workflow when you create a web page?
+  - When creating a web page I begin by creating ERB's, wireframes, and user stories.
+  - Once those are complete, I create the database, followed by basic functionality, ending with styling.
+
 * If you have 5 different stylesheets, how would you best integrate them into the site?
+  - I'm not sure why I would have 5 different stye sheets. It seems a bit excessive when you can put all of the information on one page dividing it into sections based on the page you are styling.
+  - But, if I did encounter this problem I would just include the link tags on the layout.html page or the pages using those stylings.
+
 * Can you describe the difference between progressive enhancement and graceful degradation?
+  - Progressive enhancement: a web design strategy that emphasizes accessibility, sematic HTML markup, and external stylesheet and scrypting technologies
+  - Graceful degradation: the ability of a computer, machine, electronic system, or network to maintain limited functionality even when a large portion of it has been destroyed or rendered inoperative. (NOT when Github went down) 
+
 * Describe how you would create a simple slideshow page, without any frameworks (HTML/CSS/JS only).
+  - In my HTML document I would create a div to display the slide show.
+  - Using JS I would create an array with the different slide information, then create a function using a for loop to iterate over the array, and finally using setInterval() to set the length of time between slides.
+  - CSS would be used to size and add style to the slide show so that it isn't displayed ugly and awkward against the left side of the page.
+
 * If you could master one technology this year, what would it be?
+  - Ruby on Rails
+
 * Explain the importance of standards and standards bodies.
+  - Standards were initiated due to the lack of structure when the web was first built.  Standards enable a site to be viewed on different browsers no matter how old they are. Without these, big companies could take over the web market and enable their content to only be viewed on their products, potentially monopolizing the web. (http://www.sitepoint.com/importance-web-standards/)
 
 ## HTML Questions
 
 * What does a `doctype` do?
+  - It tells the browser what version of the markup language the page is written in
+
 * What's the difference between HTML and XHTML?
+  -
+
 * What are `data-` attributes good for?
+  -
+
 * Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.
+  -
+
 * Why is it generally a good idea to position CSS `<link>`s between `<head></head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
+  -
 
 ## CSS Questions
 
