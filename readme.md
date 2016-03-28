@@ -28,6 +28,9 @@ Go through all of the following questions and think about how you would respond 
 
 * Talk about your preferred development environment.
   - I prefer to work in a quite, relaxed environment, that promotes learning and doesn't make you feel awkward for asking questions.
+  - Language & framework: Ruby on Rails
+  - Database: Sql
+  - Text Editor: Sublime
 
 * Which version control systems are you familiar with?
   - Git
@@ -41,8 +44,8 @@ Go through all of the following questions and think about how you would respond 
   - But, if I did encounter this problem I would just include the link tags on the layout.html page or the pages using those stylings.
 
 * Can you describe the difference between progressive enhancement and graceful degradation?
-  - Progressive enhancement: a web design strategy that emphasizes accessibility, sematic HTML markup, and external stylesheet and scrypting technologies
-  - Graceful degradation: the ability of a computer, machine, electronic system, or network to maintain limited functionality even when a large portion of it has been destroyed or rendered inoperative. (NOT when Github went down) 
+  - Progressive enhancement: Giving a client the simplest site and functionality and adding fancy functionality for users with newer browsers
+  - Graceful degradation: Moving from mobile, laptop, crappy phone, fancy tablet seamlessly, and the web page works well and looks well on each.
 
 * Describe how you would create a simple slideshow page, without any frameworks (HTML/CSS/JS only).
   - In my HTML document I would create a div to display the slide show.
@@ -61,21 +64,29 @@ Go through all of the following questions and think about how you would respond 
   - It tells the browser what version of the markup language the page is written in
 
 * What's the difference between HTML and XHTML?
-  -
+  - HTML (HyperText Markup Language) was the first standard to be created. It serves as the 'backbone of WWW', and is 'the most common tool used to design web pages'. (http://www.sitepoint.com/importance-web-standards/)
+  - XHTML (eXtensible HyperText Markup Language) is an improved strict version of HTML. XHTML requires '!DOCTYPE', html, title, and body tags in the body of the html file. All tags must be closed and attributes must be lowercase and have quotes.
 
 * What are `data-` attributes good for?
-  -
+  - They are good for adding style to HTML
 
 * Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.
-  -
+  - 'cookie' : small text files stored on your computer, helps the web page remember user information
+  - 'sessionStorage' : data stored in sessionStorage gets cleared when the page session ends, allows you to access a session Storage object
+  - 'localStorage' : stores user info on their local machine
 
 * Why is it generally a good idea to position CSS `<link>`s between `<head></head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
-  -
+  - The CSS <link> tags are in the <head></head> tags  because it will load first on the page, the JS <script> tags are before the </body> tag so that the page loads gracefully even if the JS isn't fully loaded.
 
 ## CSS Questions
 
 * What is the difference between classes and IDs in CSS?
+- ID's are used to identify 1 item on the page you want styled differently
+- Classes are used to style a group of items on a page
+
 * What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
+- 
+
 * Describe Floats and how they work.
 * Describe z-index and how stacking context is formed.
 * Have you ever used a grid system, and if so, what do you prefer?
