@@ -85,17 +85,36 @@ Go through all of the following questions and think about how you would respond 
 - Classes are used to style a group of items on a page
 
 * What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
-- 
+- Resetting: resets the HTML styling to a consistent baseline
+- Normalizing: similar to resetting, but only targets styles that need normailizing 
 
 * Describe Floats and how they work.
+- Float is an css attribute that moves the object you are styling to the left or right side of the webpage.
+
 * Describe z-index and how stacking context is formed.
+- Used for positioning elements on a page (stacking them), often inherits from the parent element. If the z-index is "-" (negative) the item is moved to the bottom of the stack so other elements can be stacked on top of it.
+
 * Have you ever used a grid system, and if so, what do you prefer?
+- Yes, bootstrap columns (the only one I have used).
+
 * Have you used or implemented media queries or mobile specific layouts/CSS?
+- Yes, @media(min-width:500px){}
+
 * How do you optimize your webpages for print?
+- Create a print.css file
+- Remove header, footer, side bars, any unneccisary information that doesn't pertain to the main content of the article or page.
+
 * What are the advantages/disadvantages of using CSS preprocessors?
   * Describe what you like and dislike about the CSS preprocessors you have used.
+  - Advantages: Quick solution for styling, great options for people who don't know how to customize CSS to similar specifications
+  - Disadvantages: Most websites that use these look similar, they are not unique in design.  As a developer you can come to rely on these tools and forget how to customize styling
+
 * How would you implement a web design comp that uses non-standard fonts?
+  - I would use Google Fonts by including a link in the header of my HTML document, and implementing it in my CSS file.
+
 * Explain how a browser determines what elements match a CSS selector.
+  - 
+
 * Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.
 * What does ```* { box-sizing: border-box; }``` do? What are its advantages?
 * List as many values for the display property that you can remember.
@@ -117,7 +136,12 @@ Go through all of the following questions and think about how you would respond 
   * How would you go about checking for any of these states?
 * What is a closure, and how/why would you use one?
 * What's a typical use case for anonymous functions?
+
 * Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
+- function Person(){} : defining a function named Person
+- var person = Person() : sets person equal to the result of the function Person
+- var person = new Person() : creating a new Person
+
 * What's the difference between `.call` and `.apply`?
 * Explain `Function.prototype.bind`.
 * What's the difference between feature detection, feature inference, and using the User Agent string?
@@ -133,11 +157,32 @@ Go through all of the following questions and think about how you would respond 
 * What is the extent of your experience with Promises and/or their polyfills?
 * What are the pros and cons of using Promises instead of callbacks?
 * What tools and techniques do you use debugging Javascript code?
+
 * What language constructions do you use for iterating over object properties and array items?
+- 
 
 ## Database Questions
 
 * Design a database schema for Facebook, with at least 4 models, a complete set of attributes for each model, a 1:M association, and a M:M association.
+  Associations:
+  - User(one) to Post(many)
+  - User(one) to Comment(many)
+  - User(one) to Friends(many)
+  - User(many) to UserGroup(one)
+  - Group(many) to UserGroup(one)
+  - Post(one) to Comment(many)
+  - Post(one) to Like(many)
+  - Comment(one) to Like(many)
+
+  DB Schema/ models:
+  - User: id, name, default photo, email, password
+  - Post: id, content, user_id
+  - Comment: id, body, user_id, post_id, parent_id
+  - Friends: id, user_id, friend_id
+  - Like: id, user_id, media_type, media_id, like_type
+  - Group: id, name, description
+  - GroupUsers: id, group_id, user_id
+
 
 ## Ruby/Rails
 * What are ruby gems?
@@ -145,22 +190,38 @@ Go through all of the following questions and think about how you would respond 
 * What is the difference between a class method and an instance method?
 * What is the difference between local variables, instance variables, and class variables?
 * What is a range?
-* In ruby, what does attr_accessor do?  
+
+* In ruby, what does attr_accessor do?
+- Allows the information to the right side of att_accessor to be accessed by users (read, write, edit)
+
 * What is the purpose of environment files under the config folder in Rails? (development, test, production)
 * What is the purpose of the application.rb file in Rails?
 * How can you define a constant?
 * What is the purpose of `yield`?
+
 * How do you store API keys when creating an app?
+- Place your API key in a ".env" file and use the key by calling the key name
+
 * How do I send parameters through a url?
 * Explain MVC
+
 * What is a `before_action`? When would you use it?
+- Something you put on a controller that gets executed before any functions or pages get activated, you would use it to see if a person has access to a page if they are(n't) logged in.
+
 * What do controllers do in rails?
 * What is RESTful routing?
 * What is a polymorphic association?
 * What are params?
 * How do I make a migration to add a column in Rails?
+
 * What is CSRF? How does Rails protect an app against this?
+- Cross-Site Request Forgery
+- Stores user information in a cookie, (sessions), restricts access to page based on what cookie is on the users machine. Uses a new token for each user login
+
 * What's the difference between `User.find_by_id(1)` and `User.find(1)`?
+- User.find_by_id(1) : finds a user in the User DB with the id of 1
+- User.find(1) : finds the first user in the User DB
+
 * What's are classes in Ruby? What are modules? And what's the difference?
 
 ## Testing Questions
@@ -177,6 +238,7 @@ Go through all of the following questions and think about how you would respond 
 ```javascript
 var foo = 10 + '20';
 ```
+  - 1020
 
 *Question: How would you make this work?*
 ```javascript
@@ -188,6 +250,7 @@ add(2)(5); // 7
 ```javascript
 "i'm a lasagna hog".split("").reverse().join("");
 ```
+  - "goh angasal a m'i"
 
 *Question: What is the outcome of the two alerts below?*
 ```javascript
@@ -198,6 +261,7 @@ var foo = "Hello";
 })();
 alert(foo + bar);
 ```
+  - "Hello World"
 
 *Question: What is the value of `foo.length`?*
 ```javascript
@@ -205,6 +269,7 @@ var foo = [];
 foo.push(1);
 foo.push(2);
 ```
+  - 2
 
 *Question: What is the value of `foo.x`?*
 ```javascript
@@ -212,6 +277,7 @@ var foo = {n: 1};
 var bar = foo;
 foo.x = foo = {n: 2};
 ```
+- undefined
 
 *Question: What does the following code print?*
 ```javascript
@@ -221,6 +287,7 @@ setTimeout(function() {
 }, 0);
 console.log('three');
 ```
+- "one", "three", "two"
 
 ## Fun Questions:
 
