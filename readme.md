@@ -81,50 +81,96 @@ Go through all of the following questions and think about how you would respond 
 ## CSS Questions
 
 * What is the difference between classes and IDs in CSS?
-- ID's are used to identify 1 item on the page you want styled differently
-- Classes are used to style a group of items on a page
+  - ID's are used to identify 1 item on the page you want styled differently
+  - Classes are used to style a group of items on a page
 
 * What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
-- Resetting: resets the HTML styling to a consistent baseline
-- Normalizing: similar to resetting, but only targets styles that need normailizing 
+  - Resetting: resets the HTML styling to a consistent baseline
+  - Normalizing: similar to resetting, but only targets styles that need normailizing 
 
 * Describe Floats and how they work.
-- Float is an css attribute that moves the object you are styling to the left or right side of the webpage.
+  - Float is an css attribute that moves the object you are styling to the left or right side of the webpage.
 
 * Describe z-index and how stacking context is formed.
-- Used for positioning elements on a page (stacking them), often inherits from the parent element. If the z-index is "-" (negative) the item is moved to the bottom of the stack so other elements can be stacked on top of it.
+  - Used for positioning elements on a page (stacking them), often inherits from the parent element. If the z-index is "-" (negative) the item is moved to the bottom of the stack so other elements can be stacked on top of it.
 
 * Have you ever used a grid system, and if so, what do you prefer?
-- Yes, bootstrap columns (the only one I have used).
+  - Yes, bootstrap columns (the only one I have used).
 
 * Have you used or implemented media queries or mobile specific layouts/CSS?
-- Yes, @media(min-width:500px){}
+  - Yes, @media(min-width:500px){}
 
 * How do you optimize your webpages for print?
-- Create a print.css file
-- Remove header, footer, side bars, any unneccisary information that doesn't pertain to the main content of the article or page.
+  - Create a print.css file
+  - Remove header, footer, side bars, any unneccisary information that doesn't pertain to the main content of the article or page.
 
 * What are the advantages/disadvantages of using CSS preprocessors?
   * Describe what you like and dislike about the CSS preprocessors you have used.
-  - Advantages: Quick solution for styling, great options for people who don't know how to customize CSS to similar specifications
-  - Disadvantages: Most websites that use these look similar, they are not unique in design.  As a developer you can come to rely on these tools and forget how to customize styling
+    - Advantages: Quick solution for styling, great options for people who don't know how to customize CSS to similar specifications
+    - Disadvantages: Most websites that use these look similar, they are not unique in design.  As a developer you can come to rely on these tools and forget how to customize styling
 
 * How would you implement a web design comp that uses non-standard fonts?
   - I would use Google Fonts by including a link in the header of my HTML document, and implementing it in my CSS file.
 
 * Explain how a browser determines what elements match a CSS selector.
-  - 
+  - A browser can match elements and CSS selectors in many ways.  Some examples are using id's, classes, element names, before and after, links, etc.
 
 * Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.
+  - A box model is used to add padding, border, and margin to an element.  It determines how much space an element takes up on a page. You can make box models different for each element by using classes or id's to associate the CSS styling applicable to that element.
+
 * What does ```* { box-sizing: border-box; }``` do? What are its advantages?
+  - It set's the box sizing of all elements to be the width and height assigned to that element, the padding doesn't alter the height or width of element.
+
 * List as many values for the display property that you can remember.
+  - inline-block
+  - block
+  - inline
+  - web-kit-inline-block
+  - web-kit-inline
+  - web-kit-block
+  - web-kit-box
+  - flex
+  - grid
+  - inherit
+  - none
+  - initial
+  - inline-flex
+
 * What's the difference between inline and inline-block?
+  - inline: displays items horizontally
+  - inline-block: displays items horizontally, but if the elements have child elements those items are displayed vertically
+
 * What's the difference between a relative, fixed, absolute and statically positioned element?
+  - absolute: Allows you to place an element anywhere on the page, use top, bottom, left, right, to set the position. Positioning is relative to the parent element. The element will not effect any other elements on a page and vise versa.
+  - relative: With no other positioning such as top, bottom, etc, this does nothing. BUT if you use "top: 10px" in addition to "position: relative", it will move the element down 10px. If this is used by itself it will use a z index and be placed ontop of static elements.
+  - fixed: Positions the element to a certain spot on the page, the element doesn't move if the page is scrolling. ex) a sticky nav, nav stays positions at top of page if page is scrolled to bottom.
+  - static: Positions the element to flow with the page, nothing special.. go with the flow
+
 * The 'C' in CSS stands for Cascading.  How is priority determined in assigning styles (a few examples)?  How can you use this system to your advantage?
+  - Priority is determined in CSS by using the bottom most styling that relates to an element on the page. For example..
+    div {
+      top:0;
+      right: 0;
+    }
+
+    div {
+      bottom:0;
+      left: 0;
+    }
+  - The bottom div styling will be applied to all divs and no div will have the first div styling. This can be an advantage when using media queries.
+
 * What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
+  - Bootstrap, Materialize
+  - I find them very useful the way they are, I like that you can customize them and aren't stuck with a set style while using either. They are great tools!
+
 * Have you played around with the new CSS Flexbox or Grid specs?
+  - I have only played with CSS Flexbox when completing a Flexbox Froggy assignment.
+
 * Have you ever worked with retina graphics? If so, when and what techniques did you use?
+  - No
+
 * Explain some of the pros and cons for CSS animations versus JavaScript animations.
+  - 
 
 ## JS Questions
 
@@ -245,6 +291,9 @@ var foo = 10 + '20';
 add(2, 5); // 7
 add(2)(5); // 7
 ```
+  - function add (a, b) {
+      return a + b;
+    }
 
 *Question: What value is returned from the following statement?*
 ```javascript
