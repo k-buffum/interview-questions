@@ -76,7 +76,7 @@ Go through all of the following questions and think about how you would respond 
   - 'localStorage' : stores user info on their local machine
 
 * Why is it generally a good idea to position CSS `<link>`s between `<head></head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
-  - The CSS <link> tags are in the <head></head> tags  because it will load first on the page, the JS <script> tags are before the </body> tag so that the page loads gracefully even if the JS isn't fully loaded.
+  - The CSS `<link>` tags are in the `<head></head>` tags  because it will load first on the page, the JS `<script>` tags are before the `</body>` tag so that the page loads gracefully even if the JS isn't fully loaded.
 
 ## CSS Questions
 
@@ -175,6 +175,9 @@ Go through all of the following questions and think about how you would respond 
 ## JS Questions
 
 * Explain event delegation
+  - In jQuery, .on() is used as an event handler
+  - You can place an "onclick=''" event to set an event to occur is a child element is clicked. For example, you can set the onclick event in a <ul> to alert "clicked!" each time a list item is clicked. So if you add a new list item to the <ul>, you don't need to type in all of event info to each new list item.
+
 * Explain how `this` works in JavaScript
 * Explain how prototypal inheritance works
 * Why is it called a Ternary expression, what does the word "Ternary" indicate?

@@ -1,0 +1,79 @@
+<!-- build a clock in html, css & js -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    body {
+      text-align: center;
+      margin: 100px;
+    }
+    #time {
+        background: black;
+        padding: 20px 60px;
+        margin: 20px;
+        color: white;
+        font-size: 150px;
+        font-family: sans-serif;
+        border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+    <time id="time">
+      <span id='hour'></span>:<span id='minute'></span>:<span id='second'></span> <span id="amPm"></span>
+    </time>
+    <script type="text/javascript">
+        
+        var currentTime,
+            currentMin,
+            currentHour,
+            currentSecond,
+            hourTag = document.getElementById('hour'),
+            minuteTag = document.getElementById('minute'),
+            secondTag = document.getElementById('second'),
+            amPmTag = document.getElementById('amPm'),
+            amPm,
+            currentAdjustedHour;
+
+            var getCurrentTime = function() {
+              currentTime = new Date();
+              currentMin = currentTime.getMinutes();
+              currentHour = currentTime.getHours();
+              currentSecond = currentTime.getSeconds();
+              amPm = "AM";
+              
+              if (currentHour > 12) {
+                currentAdjustedHour = currentHour -12;
+                amPm = "PM";
+              } else if (currentHour === 0) {
+                currentAdjustedHour = 12;
+                amPm = "PM";
+              };
+
+              if (currentSecond < 10) {
+                currentSecond = '0' + currentSecond;
+              }
+            };
+
+            var updateClock = function() {
+              hourTag.innerHTML = currentAdjustedHour;
+              minuteTag.innerHTML = currentMin;
+              secondTag.innerHTML = currentSecond;
+              amPmTag.innerHTML = amPm;
+            };
+            
+            getCurrentTime();
+            updateClock();
+            
+            setInterval(function(){
+              getCurrentTime();
+              updateClock();
+            },1000);
+            
+
+        
+    </script>
+</body>
+</html>
